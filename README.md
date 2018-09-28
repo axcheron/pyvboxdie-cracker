@@ -9,14 +9,9 @@ The VBox files (.vbox) contain the virtual machine informations. When the user s
 Here is a sample from a VBox file :
 
 ```html
-<HardDisk uuid="{9c7d58a4-4d90-4xxx-b8fa-73ad27550d45}" location="/Users/ax/Downloads/MBE_VM.vmdk" format="VMDK" type="Normal">
+<HardDisk uuid="{9c7d58a4-4d90-4xxx-b8fa-73ad27550d45}" location="Encrypted.vmdk" format="VMDK" type="Normal">
           <Property name="CRYPT/KeyId" value="VM"/>
-          <Property name="CRYPT/KeyStore" value="U0NORQABQUVTLVhUUzEyOC1QTEFJTjY0AAAAAAAAAAAAAAAAAABQQktERjItU0hB
-          MjU2AAAAAAAAAAAAAAAAAAAAAAAAACAAAACdUhOxqMgJ705SWPJEdAQ/0lxGaFF5
-          eWaI45j987a2zSAAAAC2g0pCkYBEbq1ROm6Fr+0+mj0kn+hzqyVV5RtQRVoTPSBO
-          AABV1n8vOTITkpae69k9veDI+A3M8fhjKRG8f79MWEiIKICpAwAgAAAAnnfaxrGH
-          li8lmFZLZNzfXifvz6TgSrLK8tsAexXb7CMAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-          AAAAAAAAAAAAAA=="/>
+          <Property name="CRYPT/KeyStore" value="U0NORQABQUVTLVhUUzI1Ni1QTEFJTjY0AAAAAAAAAAAAAAAAAABQQktERjItU0hBMjU2AAAAAAAAAAAAAAAAAAAAAAAAAEAAAABvS/VqJLI2X44BS9+Njw3CzwckGpyuZxS6nYgC/BzCByAAAABqCM2V9MpQ7RvyfCdcFAQXjriay2YBKLXItWZzFTxsGiBOAAD4oQv/5wWedWE4p16mQaya8vwUZ/i/koAHa63lWJvmSMDUAQBAAAAAmLe9bB4Q/2gGzS2l3kgMlnR3sVRMvOztBG/kTz63jBkVv34TWHzxSWcdu8RHlrNFbkoqkCvY7udQKZV43ZaKqg=="/>
 </HardDisk>
 ```
 
@@ -59,7 +54,32 @@ Checkout the source: `git clone https://github.com/axcheron/pyvboxdie-cracker.gi
 ## Getting Started
 
 ```bash
+$ python3 pyvboxdie-cracker.py
+usage: pyvboxdie-cracker.py [-h] [-v VBOX] [-d DICT]
 
+Simple tool to crack VirtualBox Disk Image Encryption passwords
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -v VBOX, --vbox VBOX  .vbox file
+  -d DICT, --dict DICT  password list
+
+$ python3 pyvboxdie-cracker.py -v sample.vbox -d wordlist.txt
+Starting pyvboxdie-cracker...
+
+[*] Encrypted drive found :  Encrypted.vmdk
+[*] KeyStore information...
+        Algorithm = AES-XTS256-PLAIN64
+        Hash = PBKDF2-SHA256
+        Final Hash = 6f4bf56a24b2365f8e014bdf8d8f0dc2cf07241a9cae6714ba9d8802fc1cc207
+
+[*] Starting bruteforce...
+        22 password tested...
+        44 password tested...
+        63 password tested...
+        70 password tested...
+
+[*] Password Found = Password123
 ```
 
 ## Resources
