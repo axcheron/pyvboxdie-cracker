@@ -11,11 +11,16 @@ Here is a sample from a VBox file :
 ```html
 <HardDisk uuid="{9c7d58a4-4d90-4xxx-b8fa-73ad27550d45}" location="Encrypted.vmdk" format="VMDK" type="Normal">
           <Property name="CRYPT/KeyId" value="VM"/>
-          <Property name="CRYPT/KeyStore" value="U0NORQABQUVTLVhUUzI1Ni1QTEFJTjY0AAAAAAAAAAAAAAAAAABQQktERjItU0hBMjU2AAAAAAAAAAAAAAAAAAAAAAAAAEAAAABvS/VqJLI2X44BS9+Njw3CzwckGpyuZxS6nYgC/BzCByAAAABqCM2V9MpQ7RvyfCdcFAQXjriay2YBKLXItWZzFTxsGiBOAAD4oQv/5wWedWE4p16mQaya8vwUZ/i/koAHa63lWJvmSMDUAQBAAAAAmLe9bB4Q/2gGzS2l3kgMlnR3sVRMvOztBG/kTz63jBkVv34TWHzxSWcdu8RHlrNFbkoqkCvY7udQKZV43ZaKqg=="/>
+          <Property name="CRYPT/KeyStore" value="U0NORQABQUVTLVhUUzI1Ni1QTEFJTjY0AAAAAAAAAAAAAAAAAABQQktERj
+          ItU0hBMjU2AAAAAAAAAAAAAAAAAAAAAAAAAEAAAABvS/VqJLI2X44BS9
+          +Njw3CzwckGpyuZxS6nYgC/BzCByAAAABqCM2V9MpQ7RvyfCdcFAQXjr
+          iay2YBKLXItWZzFTxsGiBOAAD4oQv/5wWedWE4p16mQaya8vwUZ/i/ko
+          AHa63lWJvmSMDUAQBAAAAAmLe9bB4Q/2gGzS2l3kgMlnR3sVRMvOztBG
+          /kTz63jBkVv34TWHzxSWcdu8RHlrNFbkoqkCvY7udQKZV43ZaKqg=="/>
 </HardDisk>
 ```
 
-The KeyStore is encoded using Base64, and it contains the information needed by the machine to verify the password each time the user wants to start a machine or change its password. Here are some information about the *KeyStore* stucture :
+The KeyStore is encoded using Base64, and it contains the information needed by the machine to verify the password each time the user wants to start a machine or change its password. Here are some information about the *KeyStore* structure :
 
 | Offset | Bytes | Description |
 | -----  | ----- | ----------- |
